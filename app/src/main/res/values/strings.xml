@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TrailApp</string>
+    <string name="detail_button">Pokaż trasę</string>
+    <string name="trail_name">Nazwa trasy</string>
+    <string name="trail_description">Opis trasy</string>
+    <string name="trail_list">Lista tras</string>
+</resources>
