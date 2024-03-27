@@ -9,9 +9,9 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_container_left"
         android:name="edu.put.trailapp.TrailListFragment"
-        android:layout_width="295dp"
+        android:layout_width="60dp"
         android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_weight="1"
         tools:layout="@layout/fragment_trail_list" />
 
     <FrameLayout
