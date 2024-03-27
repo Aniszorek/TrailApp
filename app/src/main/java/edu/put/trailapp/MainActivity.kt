@@ -14,10 +14,10 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener {
     }
 
     override fun itemClicked(id: Int) {
-        val fragmentContainer: View = findViewById(R.id.fragment_container)
+        val fragmentContainer: View? = findViewById(R.id.fragment_container)
         if (fragmentContainer != null) {
             val ft: FragmentTransaction = supportFragmentManager.beginTransaction()
-            val details: TrailDetailFragment = TrailDetailFragment()
+            val details = TrailDetailFragment()
             details.setTrailId(id)
             ft.replace(R.id.fragment_container, details)
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
