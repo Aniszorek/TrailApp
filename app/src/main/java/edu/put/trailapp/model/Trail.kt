@@ -11,12 +11,12 @@ data class Trail(
                 Trail(
                     name = "Szlak Górski 1",
                     description = "Opis szlaku górskiego 1...",
-                    stages = listOf("etap 1", "etap 2", "etap 3")
+                    stages = listOf("asdfhdsflakj", "etap 2", "etap 3")
                 ),
                 Trail(
                     name = "Szlak Górski 2",
                     description = "Opis szlaku górskiego 2...",
-                    stages = listOf("etap 1", "etap 2", "etap 3")
+                    stages = listOf("etap 1", "dsaljkjlkads", "etap 3")
                 ),
                 Trail(
                     name = "GR 20",
