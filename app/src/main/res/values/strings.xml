@@ -4,4 +4,9 @@
     <string name="trail_name">Nazwa trasy</string>
     <string name="trail_description">Opis trasy</string>
     <string name="trail_list">Lista tras</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">start\n</string>
+    <string name="stop">stop</string>
+    <string name="reset">reset\n</string>
 </resources>

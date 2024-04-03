@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import edu.put.trailapp.model.Trail
 
 class TrailDetailFragment : Fragment() {
@@ -24,12 +25,20 @@ class TrailDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        if (savedInstanceState != null) {
+        if (savedInstanceState == null) {
+            val stoper = StopperFragment()
+            val ft: FragmentTransaction = childFragmentManager.beginTransaction()
+            ft.add(R.id.stopper_container, stoper)
+            ft.addToBackStack(null)
+            ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+            ft.commit()
+        } else {
             trailId = savedInstanceState.getInt("trailId")
         }
     }
 
-    override fun onCreateView(
+
+        override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
