@@ -1,6 +1,7 @@
 package edu.put.trailapp
 
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -9,11 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.MenuItemCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.tabs.TabLayout
 
 
-class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyListFragment.Listener, TrailHardListFragment.Listener {
+class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
+    TrailEasyListFragment.Listener, TrailHardListFragment.Listener {
 
     private var shareActionProvider: ShareActionProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,9 +28,12 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyL
         val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
 
-        val pagerAdapter = SectionsPagerAdapter(supportFragmentManager)
+        val pagerAdapter = SectionsPagerAdapter(supportFragmentManager, resources)
         val pager = findViewById<View>(R.id.pager) as ViewPager
         pager.setAdapter(pagerAdapter)
+
+        val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
+        tabLayout.setupWithViewPager(pager)
 
     }
 
@@ -33,7 +42,8 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyL
         menuInflater.inflate(R.menu.menu_main, menu);
 
         val menuItem: MenuItem? = menu?.findItem(R.id.action_share)
-        shareActionProvider = menuItem?.let { MenuItemCompat.getActionProvider(it) } as? ShareActionProvider
+        shareActionProvider =
+            menuItem?.let { MenuItemCompat.getActionProvider(it) } as? ShareActionProvider
         setShareActionIntent("Blablablablablla")
 
         return super.onCreateOptionsMenu(menu)
@@ -69,8 +79,7 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyL
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
             ft.addToBackStack(null)
             ft.commit()
-        }
-        else {
+        } else {
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("TRAIL_ID", id)
             startActivity(intent)
@@ -79,4 +88,30 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyL
     }
 
 
+    private class SectionsPagerAdapter(
+        fm: FragmentManager?, private val resources: Resources
+    ) : FragmentPagerAdapter(fm!!) {
+        override fun getCount(): Int {
+            return 3
+        }
+
+        override fun getItem(position: Int): Fragment {
+            when (position) {
+                0 -> return TrailListFragment()
+                1 -> return TrailEasyListFragment()
+                2 -> return TrailHardListFragment()
+            }
+            return TopFragment()
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+            when (position) {
+                0 -> return resources.getString(R.string.home_tab)
+                1 -> return resources.getString(R.string.kat1_tab)
+                2 -> return resources.getString(R.string.kat2_tab)
+            }
+            return null
+        }
+    }
 }
+
