@@ -12,9 +12,9 @@ class SectionsPagerAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm!!) {
 
     override fun getItem(position: Int): Fragment {
         when (position) {
-            0 -> return TopFragment()
-            1 -> return TrailListFragment()
-            2 -> return TrailListFragment()
+            0 -> return TrailListFragment()
+            1 -> return TrailEasyListFragment()
+            2 -> return TrailHardListFragment()
         }
         return TopFragment()
     }

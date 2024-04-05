@@ -15,6 +15,8 @@
 
     <string name="action_share">Share</string>
     <string name="title_top">Fragment główny</string>
+    <string name="trail_easy_list">Łatwe szlaki górskie</string>
+    <string name="trail_hard_list">Trudne szlaki górskie</string>
 
     <string-array name="kategoria1">
         <item>Pozycja 1 Kat. 1</item>

@@ -2,6 +2,7 @@ package edu.put.trailapp
 
 import android.content.Context
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +11,7 @@ import android.widget.ListView
 import androidx.fragment.app.ListFragment
 import edu.put.trailapp.model.Trail
 
-
-class TrailListFragment : ListFragment() {
+class TrailHardListFragment : ListFragment() {
 
     interface Listener {
         fun itemClicked(id: Int)
@@ -30,7 +30,8 @@ class TrailListFragment : ListFragment() {
     ): View? {
         // Inflate the layout for this fragment
         val trailsList = Trail.getSampleTrails()
-        val trailsNames = trailsList.map { it.name }
+        val easyTrails = trailsList.filter { it.difficulty == "hard" }
+        val trailsNames = easyTrails.map { it.name }
 
         val adapter: ArrayAdapter<String?> =
             ArrayAdapter(inflater.context, android.R.layout.simple_list_item_1, trailsNames)
@@ -43,5 +44,4 @@ class TrailListFragment : ListFragment() {
         super.onListItemClick(l, v, position, id)
         listener?.itemClicked(position)
     }
-
 }

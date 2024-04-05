@@ -13,7 +13,7 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 
 
-class MainActivity : AppCompatActivity(), TrailListFragment.Listener {
+class MainActivity : AppCompatActivity(), TrailListFragment.Listener, TrailEasyListFragment.Listener, TrailHardListFragment.Listener {
 
     private var shareActionProvider: ShareActionProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
