@@ -9,4 +9,9 @@
     <string name="start">start\n</string>
     <string name="stop">stop</string>
     <string name="reset">reset\n</string>
+
+    <string name="action_activity_title">Action Activity</string>
+    <string name="action_title">Action_Activity</string>
+
+    <string name="action_share">Share</string>
 </resources>
