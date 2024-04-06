@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
                 1 -> return TrailEasyListFragment()
                 2 -> return TrailHardListFragment()
             }
-            return TopFragment()
+            return TrailListFragment()
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
