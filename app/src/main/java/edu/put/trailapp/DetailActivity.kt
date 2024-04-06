@@ -1,17 +1,20 @@
 package edu.put.trailapp
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
 import edu.put.trailapp.databinding.ActivityDetailBinding
+import edu.put.trailapp.model.Trail
 
 
 class DetailActivity : AppCompatActivity() {
@@ -26,8 +29,18 @@ class DetailActivity : AppCompatActivity() {
 
         val toolbar: Toolbar = findViewById<View>(R.id.toolbar) as Toolbar
         setSupportActionBar(toolbar)
+        val actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
 
         val trailId = intent.getIntExtra("TRAIL_ID",-1)
+        val trail = Trail.getSampleTrails()[trailId]
+        val textView: TextView = findViewById(R.id.trail_text)
+        textView.text = trail.name
+
+        val imageView: ImageView = findViewById(R.id.trail_image)
+        imageView.setImageDrawable(ContextCompat.getDrawable(this, trail.imageResourceId))
+        imageView.contentDescription = trail.name
+
         val frag = supportFragmentManager.findFragmentById(R.id.detail_frag) as TrailDetailFragment
         frag.setTrailId(trailId)
     }

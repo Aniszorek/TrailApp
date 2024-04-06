@@ -25,28 +25,28 @@ data class Trail(
                     "Opis szlaku górskiego 2...",
                     "easy",
                     listOf("etap 1", "dsaljkjlkads"),
-                    R.drawable.trail1_image
+                    R.drawable.trail2_image
                 ), Trail(
                     "GR 20",
 
                     "Najbardziej znany długodystansowy szlak trekkingowy na Korsyce, prowadzący przez góry od północy na południe wyspy.",
                     "easy",
                     listOf("etap 1", "etap 2", "etap 3"),
-                    R.drawable.trail1_image
+                    R.drawable.trail3_image
                 ), Trail(
                     "Mare a Mare Nord",
 
                     "Szlak 'Morze do Morza Północ', który przechodzi przez różnorodne krajobrazy środkowej Korsyki.",
                     "hard",
                     listOf("etap 1", "etap 2", "etap 3"),
-                    R.drawable.trail1_image
+                    R.drawable.trail4_image
                 ), Trail(
                     "Mare a Mare Sud",
 
                     "Południowa wersja szlaku 'Morze do Morza', łącząca wschodnią i zachodnią część Korsyki przez jej południowe regiony.",
                     "medium",
                     listOf("etap 1", "etap 2", "etap 3"),
-                    R.drawable.trail1_image
+                    R.drawable.trail5_image
                 ), Trail(
                     "Sentier du Douanier",
 

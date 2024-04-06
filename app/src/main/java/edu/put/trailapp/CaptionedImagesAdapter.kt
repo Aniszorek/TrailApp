@@ -12,7 +12,18 @@ import androidx.recyclerview.widget.RecyclerView
 
 class CaptionedImagesAdapter(private val captions: Array<String>, private val imageIds: IntArray) :
     RecyclerView.Adapter<CaptionedImagesAdapter.ViewHolder>() {
+
+    interface Listener {
+        fun onClick(position: Int)
+    }
+
+    private var listener: Listener? = null
+
     class ViewHolder(val cardView: CardView) : RecyclerView.ViewHolder(cardView) {
+    }
+
+    fun setListener(listener: Listener) {
+        this.listener = listener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +44,12 @@ class CaptionedImagesAdapter(private val captions: Array<String>, private val im
         imageView.contentDescription = captions[position]
         val textView = cardView.findViewById<View>(R.id.info_text) as TextView
         textView.text = captions[position]
+
+        cardView.setOnClickListener {
+            listener?.onClick(position)
+        }
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package edu.put.trailapp
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.fragment.app.ListFragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.put.trailapp.model.Trail
 
-class TrailHardListFragment : ListFragment() {
+class TrailHardListFragment : Fragment() {
 
     interface Listener {
         fun itemClicked(id: Int)
@@ -28,20 +31,30 @@ class TrailHardListFragment : ListFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        val trailRecycler =
+            inflater.inflate(R.layout.fragment_trail_hard_list, container, false) as RecyclerView
+
         val trailsList = Trail.getSampleTrails()
         val easyTrails = trailsList.filter { it.difficulty == "hard" }
         val trailsNames = easyTrails.map { it.name }
 
-        val adapter: ArrayAdapter<String?> =
-            ArrayAdapter(inflater.context, android.R.layout.simple_list_item_1, trailsNames)
-        setListAdapter(adapter)
+        val trailsImages = easyTrails.map { it.imageResourceId }
 
-        return super.onCreateView(inflater, container, savedInstanceState)
+        val adapter = CaptionedImagesAdapter(trailsNames.toTypedArray(), trailsImages.toIntArray())
+        trailRecycler.setAdapter(adapter)
+
+        val layoutManager = GridLayoutManager(activity, 2)
+        trailRecycler.setLayoutManager(layoutManager)
+
+        adapter.setListener(object : CaptionedImagesAdapter.Listener {
+            override fun onClick(position: Int) {
+                val intent = Intent(requireActivity(), DetailActivity::class.java)
+                intent.putExtra("TRAIL_ID", position)
+                requireActivity().startActivity(intent)
+            }
+        })
+
+        return trailRecycler
     }
 
-    override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
-        super.onListItemClick(l, v, position, id)
-        listener?.itemClicked(position)
-    }
 }

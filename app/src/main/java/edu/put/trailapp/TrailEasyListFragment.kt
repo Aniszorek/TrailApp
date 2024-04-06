@@ -1,13 +1,12 @@
 package edu.put.trailapp
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.ListFragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import edu.put.trailapp.model.Trail
@@ -45,19 +44,15 @@ class TrailEasyListFragment : Fragment() {
         val layoutManager = GridLayoutManager(activity, 2)
         trailRecycler.setLayoutManager(layoutManager)
 
+        adapter.setListener(object : CaptionedImagesAdapter.Listener {
+            override fun onClick(position: Int) {
+                val intent = Intent(requireActivity(), DetailActivity::class.java)
+                intent.putExtra("TRAIL_ID", position)
+                requireActivity().startActivity(intent)
+            }
+        })
+
         return trailRecycler
-
-
-        //        // Inflate the layout for this fragment
-//        val trailsList = Trail.getSampleTrails()
-//        val easyTrails = trailsList.filter { it.difficulty == "easy" }
-//        val trailsNames = easyTrails.map { it.name }
-//
-//        val adapter: ArrayAdapter<String?> =
-//            ArrayAdapter(inflater.context, android.R.layout.simple_list_item_1, trailsNames)
-//        setListAdapter(adapter)
-//
-//        return super.onCreateView(inflater, container, savedInstanceState)
     }
 
 
