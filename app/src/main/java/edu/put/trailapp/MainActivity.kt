@@ -6,20 +6,25 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.core.view.MenuItemCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
+import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
 
 
 class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
-    TrailEasyListFragment.Listener, TrailHardListFragment.Listener {
+    TrailEasyListFragment.Listener, TrailHardListFragment.Listener, NavigationView.OnNavigationItemSelectedListener {
 
     private var shareActionProvider: ShareActionProvider? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,11 +40,25 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
         val tabLayout = findViewById<View>(R.id.tabs) as TabLayout
         tabLayout.setupWithViewPager(pager)
 
+        val drawer = findViewById<View>(R.id.list_frag) as DrawerLayout
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawer,
+            toolbar,
+            R.string.open_drawer,
+            R.string.close_drawer
+        )
+        drawer.addDrawerListener(toggle)
+        toggle.syncState()
+
+        val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
+        navigationView.setNavigationItemSelectedListener(this)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         println(menu)
-        menuInflater.inflate(R.menu.menu_main, menu);
+        menuInflater.inflate(R.menu.menu_main, menu)
 
         val menuItem: MenuItem? = menu?.findItem(R.id.action_share)
         shareActionProvider =
@@ -113,5 +132,34 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
             return null
         }
     }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        val id = item.itemId
+
+        when (id) {
+            R.id.drawer_import -> showMessage("Tu kiedyś będzie jakaś opcja")
+            R.id.drawer_gallery -> showMessage("Tu kiedyś będzie jakaś inna opcja")
+        }
+        val drawer = findViewById<DrawerLayout>(R.id.list_frag)
+        drawer.closeDrawer(GravityCompat.START)
+        return true
+    }
+
+    private fun showMessage(msg: String) {
+        val toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT)
+        toast.show()
+    }
+
+    @Deprecated("Deprecated in Java")
+    override fun onBackPressed() {
+        val drawer = findViewById<View>(R.id.list_frag) as DrawerLayout
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
+    }
+
+
 }
 

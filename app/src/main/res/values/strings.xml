@@ -4,7 +4,6 @@
     <string name="trail_name">Nazwa trasy</string>
     <string name="trail_description">Opis trasy</string>
     <string name="trail_list">Lista tras</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="start">start\n</string>
     <string name="stop">stop</string>
@@ -29,5 +28,16 @@
     <string name="tekst_pomocy">Jeśli masz jakiekolwiek pytania lub potrzebujesz pomocy, nie wahaj się skontaktować z naszym zespołem obsługi klienta. Jesteśmy dostępni 24/7, aby świadczyć wsparcie i rozwiązywać Twoje problemy. Zadzwoń pod numer\n<b>+48 123 456 789</b>\nlub wyślij wiadomość e-mail na adres:\n<b>pomoc@twojafirma.com.</b>\nTwój komfort i satysfakcja są naszym priorytetem!</string>
     <string name="trail_image_desc">Zdjęcie góry ze szlaku</string>
     <string name="ftb_desc">Kamera tu kiedyś będzie</string>
+    <string name="user_name">Android Studio</string>
+    <string name="user_mail">android.studio@android.com</string>
+    <string name="android_img">Obrazek android</string>
+    <string name="drawer_import">Import</string>
+
+    <string name="open_drawer">Otwórz szufladę nawigacyjną</string>
+    <string name="close_drawer">Zamknij szufladę nawigacyjną</string>
+    <string name="drawer_gallery">Galeria</string>
+    <string name="import_fragment_text">Tutaj nie dzieje się nic ciekawego, ale mogłoby.\nMoże kiedyś w przyszłości będzie</string>
+    <string name="dog">Piesek</string>
+    <string name="gallery_fragment_text">Tutaj też nic ciekawego nie ma.</string>
 
 </resources>
