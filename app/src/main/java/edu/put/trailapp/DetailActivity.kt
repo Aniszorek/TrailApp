@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         println(menu)
-        menuInflater.inflate(R.menu.menu_main, menu);
+        menuInflater.inflate(R.menu.menu_main, menu)
 
         val menuItem: MenuItem? = menu?.findItem(R.id.action_share)
         shareActionProvider =

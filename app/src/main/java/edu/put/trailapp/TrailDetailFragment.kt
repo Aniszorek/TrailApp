@@ -73,7 +73,7 @@ class TrailDetailFragment : Fragment() {
         for (i in 0 until adapter.count) {
             val listItem = listView.let { adapter.getView(i, null, it) }
             listItem.measure(0, 0)
-            totalHeight += listItem.measuredHeight ?: 0
+            totalHeight += listItem.measuredHeight
         }
         val layoutParams = listView.layoutParams
 
