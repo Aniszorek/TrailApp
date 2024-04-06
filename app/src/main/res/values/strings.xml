@@ -10,8 +10,8 @@
     <string name="stop">stop</string>
     <string name="reset">reset\n</string>
 
-    <string name="action_activity_title">Action Activity</string>
-    <string name="action_title">Action_Activity</string>
+    <string name="action_activity_title">Pomoc</string>
+    <string name="action_title">Pomoc</string>
 
     <string name="action_share">Share</string>
     <string name="title_top">Fragment główny</string>
@@ -26,5 +26,6 @@
     <string name="top_image">gory.jpg</string>
     <string name="top_text">Aplikacja do przedstawienia szlaków górskich Wyjątek java.lang.RuntimeException: Your content must have a ListView whose id attribute is android.R.id.list występuje, ponieważ klasa ListFragment oczekuje, że widok, który zwracasz w metodzie onCreateView, zawiera element ListView z identyfikatorem android.R.id.list. Ten identyfikator jest używany przez ListFragment do znalezienia ListView, który ma zostać wyświetlony w fragmencie.Aby naprawić ten błąd, zmień identyfikator ListView w swoim pliku XML na android.R.id.list. Oto jak można to zrobić:W twoim pliku XML (np. fragment_trail_list.xml), zmień identyfikator ListView na android.R.id.list:Wyjątek java.lang.RuntimeException: Your content must have a ListView whose id attribute is android.R.id.list występuje, ponieważ klasa ListFragment oczekuje, że widok, który zwracasz w metodzie onCreateView, zawiera element ListView z identyfikatorem android.R.id.list. Ten identyfikator jest używany przez ListFragment do znalezienia ListView, który ma zostać wyświetlony w fragmencie.Aby naprawić ten błąd, zmień identyfikator ListView w swoim pliku XML na android.R.id.list. Oto jak można to zrobić:W twoim pliku XML (np. fragment_trail_list.xml), zmień identyfikator ListView na android.R.id.list:Wyjątek java.lang.RuntimeException: Your content must have a ListView whose id attribute is android.R.id.list występuje, ponieważ klasa ListFragment oczekuje, że widok, który zwracasz w metodzie onCreateView, zawiera element ListView z identyfikatorem android.R.id.list. Ten identyfikator jest używany przez ListFragment do znalezienia ListView, który ma zostać wyświetlony w fragmencie.Aby naprawić ten błąd, zmień identyfikator ListView w swoim pliku XML na android.R.id.list. Oto jak można to zrobić:W twoim pliku XML (np. fragment_trail_list.xml), zmień identyfikator ListView na android.R.id.list:</string>
     <string name="image_title">Gory\n</string>
+    <string name="tekst_pomocy">Jeśli masz jakiekolwiek pytania lub potrzebujesz pomocy, nie wahaj się skontaktować z naszym zespołem obsługi klienta. Jesteśmy dostępni 24/7, aby świadczyć wsparcie i rozwiązywać Twoje problemy. Zadzwoń pod numer\n<b>+48 123 456 789</b>\nlub wyślij wiadomość e-mail na adres:\n<b>pomoc@twojafirma.com.</b>\nTwój komfort i satysfakcja są naszym priorytetem!</string>
 
 </resources>

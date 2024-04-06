@@ -38,7 +38,7 @@ class TrailDetailFragment : Fragment() {
     }
 
 
-        override fun onCreateView(
+    override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
@@ -57,9 +57,30 @@ class TrailDetailFragment : Fragment() {
         val description: TextView? = view?.findViewById(R.id.textDescription)
         description?.text = trail.description
 
-        val stepList: ListView? = view?.findViewById(R.id.stages)
-        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, trail.stages)
-        stepList?.adapter = adapter
+        val listView: ListView? = view?.findViewById(R.id.stages)
+        val adapter =
+            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, trail.stages)
+        listView?.adapter = adapter
+
+        if (listView != null) {
+            setListViewHeightBasedOnItems(adapter, listView)
+        }
+
+    }
+
+    private fun setListViewHeightBasedOnItems(adapter: ArrayAdapter<String>, listView: ListView) {
+        var totalHeight = 0
+        for (i in 0 until adapter.count) {
+            val listItem = listView.let { adapter.getView(i, null, it) }
+            listItem.measure(0, 0)
+            totalHeight += listItem.measuredHeight ?: 0
+        }
+        val layoutParams = listView.layoutParams
+
+        layoutParams?.height = totalHeight + (listView.dividerHeight.times((adapter.count - 1)))
+
+        listView.layoutParams = layoutParams
+        listView.requestLayout()
     }
 
 }

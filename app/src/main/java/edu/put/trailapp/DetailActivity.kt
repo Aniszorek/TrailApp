@@ -43,6 +43,9 @@ class DetailActivity : AppCompatActivity() {
 
         val frag = supportFragmentManager.findFragmentById(R.id.detail_frag) as TrailDetailFragment
         frag.setTrailId(trailId)
+
+
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
