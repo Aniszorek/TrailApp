@@ -22,6 +22,24 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
+            android:name=".menu_activity.GalleryActivity"
+            android:exported="false"
+            android:label="@string/gallery_activity_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".menu_activity.ImportActivity"
+            android:exported="false"
+            android:label="@string/import_activity_title"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
             android:name=".DetailActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity"/>

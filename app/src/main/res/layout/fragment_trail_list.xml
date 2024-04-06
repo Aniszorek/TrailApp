@@ -26,7 +26,6 @@
             android:layout_height="wrap_content"
             android:src="@drawable/gory"
             android:scaleType="centerCrop"
-            android:padding="16dp"
             android:contentDescription="gory" />
 
         <TextView

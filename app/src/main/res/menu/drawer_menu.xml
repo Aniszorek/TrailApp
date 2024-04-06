@@ -7,6 +7,6 @@
 
     <item
         android:id="@+id/drawer_gallery"
-        android:icon="@drawable/camera"
+        android:icon="@drawable/gallery"
         android:title="@string/drawer_gallery" />
 </menu>

@@ -21,6 +21,8 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import edu.put.trailapp.menu_activity.GalleryActivity
+import edu.put.trailapp.menu_activity.ImportActivity
 
 
 class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
@@ -135,11 +137,12 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val id = item.itemId
-
-        when (id) {
-            R.id.drawer_import -> showMessage("Tu kiedyś będzie jakaś opcja")
-            R.id.drawer_gallery -> showMessage("Tu kiedyś będzie jakaś inna opcja")
+        val intent: Intent = when (id) {
+            R.id.drawer_import -> Intent(this, GalleryActivity::class.java)
+            R.id.drawer_gallery -> Intent(this, ImportActivity::class.java)
+            else -> Intent(this, MainActivity::class.java)
         }
+        startActivity(intent)
         val drawer = findViewById<DrawerLayout>(R.id.list_frag)
         drawer.closeDrawer(GravityCompat.START)
         return true

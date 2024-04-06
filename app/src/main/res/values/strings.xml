@@ -39,5 +39,7 @@
     <string name="import_fragment_text">Tutaj nie dzieje się nic ciekawego, ale mogłoby.\nMoże kiedyś w przyszłości będzie</string>
     <string name="dog">Piesek</string>
     <string name="gallery_fragment_text">Tutaj też nic ciekawego nie ma.</string>
+    <string name="import_activity_title">Import</string>
+    <string name="gallery_activity_title">Galeria</string>
 
 </resources>
