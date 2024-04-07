@@ -1,4 +1,4 @@
-package edu.put.trailapp
+package edu.put.trailapp.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import edu.put.trailapp.CaptionedImagesAdapter
+import edu.put.trailapp.activity.DetailActivity
+import edu.put.trailapp.R
 import edu.put.trailapp.model.Trail
 
 class TrailHardListFragment : Fragment() {

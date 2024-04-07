@@ -1,13 +1,12 @@
-package edu.put.trailapp
+package edu.put.trailapp.fragments
 
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.ListFragment
+import edu.put.trailapp.R
 
 
 class TrailListFragment : Fragment() {

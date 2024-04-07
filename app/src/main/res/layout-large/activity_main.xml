@@ -39,7 +39,7 @@
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragment_container_left"
-                android:name="edu.put.trailapp.TrailListFragment"
+                android:name="edu.put.trailapp.fragments.TrailListFragment"
                 android:layout_width="60dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

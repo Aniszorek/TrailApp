@@ -1,4 +1,4 @@
-package edu.put.trailapp
+package edu.put.trailapp.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,7 +13,9 @@ import androidx.appcompat.widget.ShareActionProvider
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.core.view.MenuItemCompat
+import edu.put.trailapp.R
 import edu.put.trailapp.databinding.ActivityDetailBinding
+import edu.put.trailapp.fragments.TrailDetailFragment
 import edu.put.trailapp.model.Trail
 
 

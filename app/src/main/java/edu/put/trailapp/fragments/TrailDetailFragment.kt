@@ -1,4 +1,4 @@
-package edu.put.trailapp
+package edu.put.trailapp.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.ListView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import edu.put.trailapp.R
 import edu.put.trailapp.model.Trail
 
 class TrailDetailFragment : Fragment() {

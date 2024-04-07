@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
+import edu.put.trailapp.fragments.StopperFragment
 
 
 class TempActivity : AppCompatActivity() {

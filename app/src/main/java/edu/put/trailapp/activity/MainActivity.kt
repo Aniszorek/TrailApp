@@ -1,4 +1,4 @@
-package edu.put.trailapp
+package edu.put.trailapp.activity
 
 import android.content.Intent
 import android.content.res.Resources
@@ -21,6 +21,11 @@ import androidx.fragment.app.FragmentTransaction
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import edu.put.trailapp.R
+import edu.put.trailapp.fragments.TrailDetailFragment
+import edu.put.trailapp.fragments.TrailEasyListFragment
+import edu.put.trailapp.fragments.TrailHardListFragment
+import edu.put.trailapp.fragments.TrailListFragment
 import edu.put.trailapp.menu_activity.GalleryActivity
 import edu.put.trailapp.menu_activity.ImportActivity
 

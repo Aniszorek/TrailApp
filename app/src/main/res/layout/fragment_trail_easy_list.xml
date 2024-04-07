@@ -5,6 +5,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/tab1_recycler"
-    tools:context=".TrailEasyListFragment">
+    tools:context=".fragments.TrailEasyListFragment">
 
 </androidx.recyclerview.widget.RecyclerView>

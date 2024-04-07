@@ -49,7 +49,7 @@
 
         <androidx.fragment.app.FragmentContainerView xmlns:tools="http://schemas.android.com/tools"
             android:id="@+id/detail_frag"
-            android:name="edu.put.trailapp.TrailDetailFragment"
+            android:name="edu.put.trailapp.fragments.TrailDetailFragment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_trail_detail" />
