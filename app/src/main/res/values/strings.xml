@@ -41,5 +41,6 @@
     <string name="gallery_fragment_text">Tutaj też nic ciekawego nie ma.</string>
     <string name="import_activity_title">Import</string>
     <string name="gallery_activity_title">Galeria</string>
+    <string name="sun_desc">Takie słoneczko</string>
 
 </resources>
