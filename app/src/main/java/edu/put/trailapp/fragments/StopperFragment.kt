@@ -1,5 +1,6 @@
 package edu.put.trailapp.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -12,6 +13,21 @@ import edu.put.trailapp.R
 
 
 class StopperFragment : Fragment(), View.OnClickListener {
+
+    interface StopperListener {
+        fun onTimeStopped(time: String)
+    }
+
+    private var listener: StopperListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listener = if (context is StopperListener) {
+            context
+        } else {
+            throw RuntimeException("$context must implement StopperListener")
+        }
+    }
 
     var seconds: Int = 0
     var running: Boolean = false
@@ -76,6 +92,7 @@ class StopperFragment : Fragment(), View.OnClickListener {
 
     private fun onClickStop() {
         running = false
+        listener?.onTimeStopped(getFormattedTime())
     }
 
     private fun onClickReset() {
@@ -99,6 +116,17 @@ class StopperFragment : Fragment(), View.OnClickListener {
                 handler.postDelayed(this, 1000)
             }
         })
+    }
+
+    private fun getFormattedTime(): String {
+        val hours: Int = seconds / 3600
+        val minutes: Int = (seconds % 3600) / 60
+        val secs: Int = seconds % 60
+        return String.format("%d:%02d:%02d", hours, minutes, secs)
+    }
+
+    fun setStopperListener(listener: StopperListener) {
+        this.listener = listener
     }
 }
 
