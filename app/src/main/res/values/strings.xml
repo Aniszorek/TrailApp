@@ -42,5 +42,6 @@
     <string name="import_activity_title">Import</string>
     <string name="gallery_activity_title">Galeria</string>
     <string name="sun_desc">Takie słoneczko</string>
+    <string name="gory">gory</string>
 
 </resources>

@@ -60,7 +60,7 @@ class TrailDetailFragment : Fragment() {
 
         val listView: ListView? = view?.findViewById(R.id.stages)
         val adapter =
-            ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, trail.stages)
+            ArrayAdapter(requireContext(), R.layout.custom_list_view, trail.stages)
         listView?.adapter = adapter
 
         if (listView != null) {

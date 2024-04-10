@@ -23,6 +23,7 @@
             android:id="@+id/info_text"
             android:layout_marginStart="4dp"
             android:layout_marginBottom="4dp"
+            android:textSize="@dimen/text_size_medium"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"/>
     </LinearLayout>

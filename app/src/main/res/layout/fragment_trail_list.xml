@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/top_header"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_size_large"
             android:textStyle="bold"
             android:padding="16dp"/>
 
@@ -26,14 +26,15 @@
             android:layout_height="wrap_content"
             android:src="@drawable/gory"
             android:scaleType="centerCrop"
-            android:contentDescription="gory" />
+            android:contentDescription="@string/gory" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/top_text"
-            android:padding="20dp"/>
+            android:padding="20dp"
+            android:textSize="@dimen/text_size_medium"/>
 
     </LinearLayout>
 
