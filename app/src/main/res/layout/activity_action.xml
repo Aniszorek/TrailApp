@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tekst_pomocy"
         android:visibility="visible"
+        android:textSize="@dimen/text_size_medium"
         android:padding="10dp"/>
 
 </LinearLayout>

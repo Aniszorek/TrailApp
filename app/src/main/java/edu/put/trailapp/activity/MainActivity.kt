@@ -3,6 +3,9 @@ package edu.put.trailapp.activity
 import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.AbsoluteSizeSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -132,9 +135,39 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
 
         override fun getPageTitle(position: Int): CharSequence? {
             when (position) {
-                0 -> return resources.getString(R.string.home_tab)
-                1 -> return resources.getString(R.string.kat1_tab)
-                2 -> return resources.getString(R.string.kat2_tab)
+                0 -> {
+                    val textSize = resources.getDimensionPixelSize(R.dimen.text_size_medium)
+                    val spannableString = SpannableString(resources.getString(R.string.home_tab))
+                    spannableString.setSpan(
+                        AbsoluteSizeSpan(textSize),
+                        0,
+                        spannableString.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    return spannableString
+                }
+                1 -> {
+                val textSize = resources.getDimensionPixelSize(R.dimen.text_size_medium)
+                val spannableString = SpannableString(resources.getString(R.string.kat1_tab))
+                spannableString.setSpan(
+                    AbsoluteSizeSpan(textSize),
+                    0,
+                    spannableString.length,
+                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                )
+                return spannableString
+            }
+                2 -> {
+                    val textSize = resources.getDimensionPixelSize(R.dimen.text_size_medium)
+                    val spannableString = SpannableString(resources.getString(R.string.kat2_tab))
+                    spannableString.setSpan(
+                        AbsoluteSizeSpan(textSize),
+                        0,
+                        spannableString.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    return spannableString
+                }
             }
             return null
         }
@@ -153,10 +186,6 @@ class MainActivity : AppCompatActivity(), TrailListFragment.Listener,
         return true
     }
 
-    private fun showMessage(msg: String) {
-        val toast = Toast.makeText(this, msg, Toast.LENGTH_SHORT)
-        toast.show()
-    }
 
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
